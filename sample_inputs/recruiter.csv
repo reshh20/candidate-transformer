@@ -1,0 +1,5 @@
+name,email,phone,current_company,title,github_username
+Octo Cat,octocat@github.com,9876543210,GitHub Inc,Mascot Engineer,octocat
+Linus B Valds,linus@example.com,+91-98765-43211,Linux Foundation,Kernel Maintainer,torvalds
+Priya Singh,,9123456780,Infosys,Data Analyst,
+Vikram Joshi,vikram.j@outlook.com,,TCS,,ghost-user-404
