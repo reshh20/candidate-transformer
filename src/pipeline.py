@@ -2,8 +2,11 @@ import json
 from src.extract_csv import extract_csv
 from src.extract_github import extract_github
 from src.merge import build_partial_from_csv, build_partial_from_github, merge_records
+from src.project import project
+
 
 def run_pipeline(csv_path):
+    """Builds the FULL canonical records (unchanged from Phase 4)."""
     csv_rows = extract_csv(csv_path)
     profiles = []
 
@@ -19,6 +22,16 @@ def run_pipeline(csv_path):
 
     return profiles
 
+
+def run_pipeline_with_config(csv_path, config_path):
+    """Builds full records, then projects each through the given config."""
+    profiles = run_pipeline(csv_path)
+    with open(config_path) as f:
+        config = json.load(f)
+    return [project(p, config) for p in profiles]
+
+
 if __name__ == "__main__":
+    # default: full canonical output, no config applied
     result = run_pipeline("sample_inputs/recruiter.csv")
     print(json.dumps(result, indent=2))
