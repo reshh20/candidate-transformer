@@ -238,17 +238,6 @@ Output JSON
 
 
 
-# Scope Deliberately Excluded
-
-To stay within the assignment timeline, the following were intentionally not implemented:
-
-- LinkedIn integration
-- Resume (PDF/DOCX) parsing
-- Advanced fuzzy matching algorithms
-- Machine learning-based skill extraction
-
-
-
 # Deliverables
 
 This repository contains:
@@ -278,8 +267,3 @@ A short demonstration video showing:
 
 
 
-# Author
-
-M. Reshma
-Bachelor of Engineering (Computer Science & Engineering)
-Chennai Institute of Technology and Applied Research
