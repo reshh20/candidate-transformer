@@ -3,6 +3,7 @@ from src.extract_csv import extract_csv
 from src.extract_github import extract_github
 from src.merge import build_partial_from_csv, build_partial_from_github, merge_records
 from src.project import project
+from src.validate import validate_against_config
 
 
 def run_pipeline(csv_path):
@@ -24,11 +25,18 @@ def run_pipeline(csv_path):
 
 
 def run_pipeline_with_config(csv_path, config_path):
-    """Builds full records, then projects each through the given config."""
+    """Builds full records, projects each through the config, then validates the result."""
     profiles = run_pipeline(csv_path)
     with open(config_path) as f:
         config = json.load(f)
-    return [project(p, config) for p in profiles]
+
+    projected = []
+    for p in profiles:
+        result = project(p, config)
+        validate_against_config(result, config)  # raises ValidationError if something's wrong
+        projected.append(result)
+
+    return projected
 
 
 if __name__ == "__main__":

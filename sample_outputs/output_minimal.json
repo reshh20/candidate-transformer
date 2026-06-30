@@ -1,0 +1,16 @@
+[
+  {
+    "primary_email": "octocat@github.com",
+    "phone": "+919876543210"
+  },
+  {
+    "primary_email": "linus@example.com",
+    "phone": "+919876543211"
+  },
+  {
+    "phone": "+919123456780"
+  },
+  {
+    "primary_email": "vikram.j@outlook.com"
+  }
+]

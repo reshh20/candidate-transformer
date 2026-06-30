@@ -1,0 +1,182 @@
+[
+  {
+    "full_name": "The Octocat",
+    "emails": [
+      "octocat@github.com"
+    ],
+    "phones": [
+      "+919876543210"
+    ],
+    "skills": [
+      "css",
+      "html",
+      "ruby"
+    ],
+    "links": {
+      "github": "https://github.com/octocat",
+      "linkedin": null,
+      "portfolio": null,
+      "other": []
+    },
+    "overall_confidence": 0.56,
+    "field_confidence": {
+      "full_name": 1.0,
+      "emails": 0.6,
+      "phones": 0.6,
+      "skills": 0.3,
+      "links.github": 0.3
+    },
+    "provenance": [
+      {
+        "field": "full_name",
+        "source": "github",
+        "method": "conflict_resolved",
+        "note": "CSV said 'Octo Cat', GitHub said 'The Octocat'. GitHub preferred (self-reported)."
+      },
+      {
+        "field": "emails",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "phones",
+        "source": "csv",
+        "method": "normalize_phone"
+      },
+      {
+        "field": "skills",
+        "source": "github",
+        "method": "language_list"
+      },
+      {
+        "field": "links.github",
+        "source": "github",
+        "method": "direct"
+      }
+    ]
+  },
+  {
+    "full_name": "Linus Torvalds",
+    "emails": [
+      "linus@example.com"
+    ],
+    "phones": [
+      "+919876543211"
+    ],
+    "skills": [
+      "openscad",
+      "c",
+      "c++"
+    ],
+    "links": {
+      "github": "https://github.com/torvalds",
+      "linkedin": null,
+      "portfolio": null,
+      "other": []
+    },
+    "overall_confidence": 0.56,
+    "field_confidence": {
+      "full_name": 1.0,
+      "emails": 0.6,
+      "phones": 0.6,
+      "skills": 0.3,
+      "links.github": 0.3
+    },
+    "provenance": [
+      {
+        "field": "full_name",
+        "source": "github",
+        "method": "conflict_resolved",
+        "note": "CSV said 'Linus B Valds', GitHub said 'Linus Torvalds'. GitHub preferred (self-reported)."
+      },
+      {
+        "field": "emails",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "phones",
+        "source": "csv",
+        "method": "normalize_phone"
+      },
+      {
+        "field": "skills",
+        "source": "github",
+        "method": "language_list"
+      },
+      {
+        "field": "links.github",
+        "source": "github",
+        "method": "direct"
+      }
+    ]
+  },
+  {
+    "full_name": "Priya Singh",
+    "emails": null,
+    "phones": [
+      "+919123456780"
+    ],
+    "skills": null,
+    "links": {
+      "github": null,
+      "linkedin": null,
+      "portfolio": null,
+      "other": []
+    },
+    "overall_confidence": 0.24,
+    "field_confidence": {
+      "full_name": 0.6,
+      "emails": 0.0,
+      "phones": 0.6,
+      "skills": 0.0,
+      "links.github": 0.0
+    },
+    "provenance": [
+      {
+        "field": "emails",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "phones",
+        "source": "csv",
+        "method": "normalize_phone"
+      }
+    ]
+  },
+  {
+    "full_name": "Vikram Joshi",
+    "emails": [
+      "vikram.j@outlook.com"
+    ],
+    "phones": null,
+    "skills": null,
+    "links": {
+      "github": null,
+      "linkedin": null,
+      "portfolio": null,
+      "other": []
+    },
+    "overall_confidence": 0.24,
+    "field_confidence": {
+      "full_name": 0.6,
+      "emails": 0.6,
+      "phones": 0.0,
+      "skills": 0.0,
+      "links.github": 0.0
+    },
+    "provenance": [
+      {
+        "field": "emails",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "phones",
+        "source": "csv",
+        "method": "normalize_phone"
+      }
+    ]
+  }
+]
