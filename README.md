@@ -39,29 +39,30 @@ The canonical candidate profile includes fields such as candidate_id, full_name,
 ```text
 candidate-transformer/
 │
-├── app.py                      # Optional Streamlit Web UI
-├── main.py                     # CLI entry point
+├── app.py                           # Optional Streamlit Web UI
+├── main.py                          # CLI entry point
 ├── README.md
 ├── requirements.txt
 ├── pytest.ini
 ├── .gitignore
 │
 ├── src/
-│   ├── deduplicate.py          # Candidate matching and deduplication logic
-│   ├── extract_csv.py          # Reads recruiter CSV
-│   ├── extract_github.py       # Retrieves candidate data from GitHub API
-│   ├── merge.py               # Merges records, conflict resolution, provenance & confidence
-│   ├── normalize.py           # Phone, date and skill normalization
-│   ├── pipeline.py            # End-to-end pipeline orchestration
-│   ├── project.py             # Runtime projection/config layer
-│   └── validate.py            # Output schema validation
+│   ├── deduplicate.py               # Candidate matching and deduplication logic
+│   ├── extract_csv.py               # Reads recruiter CSV files
+│   ├── extract_github.py            # Retrieves candidate data from GitHub API
+│   ├── merge.py                     # Merges records, conflict resolution, provenance & confidence
+│   ├── normalize.py                 # Phone, date, skill and other normalization utilities
+│   ├── pipeline.py                  # End-to-end pipeline orchestration
+│   ├── project.py                   # Runtime projection/config layer
+│   └── validate.py                  # Output schema validation
 │
 ├── configs/
-│   ├── default.json           # Full output configuration
-│   └── minimal.json           # Minimal output configuration
+│   ├── default.json                 # Full output configuration
+│   └── minimal.json                 # Minimal output configuration
 │
 ├── sample_inputs/
-│   └── recruiter.csv          # Sample recruiter dataset
+│   ├── recruiter.csv                # Sample recruiter dataset
+│   └── sample_candidates_2.csv      # Additional sample recruiter dataset
 │
 ├── sample_outputs/
 │   ├── output_default.json
