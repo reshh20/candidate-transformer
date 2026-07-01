@@ -4,9 +4,6 @@ STRUCTURED_SOURCES = {"csv"}
 UNSTRUCTURED_SOURCES = {"github"}
 
 def field_confidence(sources_for_field):
-    """Implements the design doc's confidence policy exactly:
-    1.0 = confirmed by 2+ sources, 0.6 = one structured source only,
-    0.3 = one unstructured source only, 0.0 = missing."""
     sources_for_field = set(sources_for_field)
     if len(sources_for_field) >= 2:
         return 1.0
@@ -19,10 +16,30 @@ def field_confidence(sources_for_field):
     return 0.0
 
 def build_partial_from_csv(row):
+    # Parse "Chennai IN" into city + country
+    location = None
+    if row.get("location"):
+        parts = row["location"].rsplit(" ", 1)
+        location = {
+            "city": parts[0] if len(parts) == 2 else row["location"],
+            "region": None,
+            "country": parts[1] if len(parts) == 2 else None
+        }
+
+    # Parse years_experience safely
+    years_exp = None
+    if row.get("years_experience"):
+        try:
+            years_exp = int(row["years_experience"])
+        except ValueError:
+            pass
+
     return {
         "full_name": row.get("name"),
         "emails": [row["email"]] if row.get("email") else [],
         "phones": [normalize_phone(row["phone"])] if row.get("phone") else [],
+        "location": location,
+        "years_experience": years_exp,
         "experience": [{
             "company": row.get("company"),
             "title": row.get("title"),
@@ -35,6 +52,8 @@ def build_partial_from_csv(row):
             {"field": "full_name", "source": "csv", "method": "direct"},
             {"field": "emails", "source": "csv", "method": "direct"},
             {"field": "phones", "source": "csv", "method": "normalize_phone"},
+            {"field": "location", "source": "csv", "method": "direct"},
+            {"field": "years_experience", "source": "csv", "method": "direct"},
         ]
     }
 
@@ -47,6 +66,8 @@ def build_partial_from_github(gh_data):
         "full_name": gh_data.get("name"),
         "emails": [],
         "phones": [],
+        "location": None,
+        "years_experience": None,
         "experience": [],
         "skills": skills,
         "links": {"github": gh_data.get("github_url"), "linkedin": None, "portfolio": None, "other": []},
@@ -61,13 +82,16 @@ def build_partial_from_github(gh_data):
 def merge_records(partials):
     partials = [p for p in partials if p]
     merged = {
-        "full_name": None, "emails": [], "phones": [], "skills": [],
-        "experience": [], "education": [],
+        "full_name": None,
+        "emails": [], "phones": [],
+        "location": None,
+        "years_experience": None,
+        "skills": [], "experience": [], "education": [],
         "links": {"github": None, "linkedin": None, "portfolio": None, "other": []},
         "headline": None, "provenance": []
     }
 
-    # --- full_name: conflict resolution policy (GitHub preferred when both present and differ) ---
+    # full_name conflict resolution — GitHub preferred when both present and differ
     csv_partial = next((p for p in partials if p["_source"] == "csv"), None)
     github_partial = next((p for p in partials if p["_source"] == "github"), None)
 
@@ -90,8 +114,12 @@ def merge_records(partials):
     elif csv_name:
         merged["full_name"] = csv_name
 
-    # --- combine list-type fields and track which sources contributed to each ---
-    field_sources = {"full_name": name_sources, "emails": [], "phones": [], "skills": [], "links.github": []}
+    field_sources = {
+        "full_name": name_sources,
+        "emails": [], "phones": [],
+        "skills": [], "links.github": [],
+        "location": [], "years_experience": []
+    }
 
     for p in partials:
         merged["emails"] += [e for e in p.get("emails", []) if e]
@@ -115,12 +143,20 @@ def merge_records(partials):
         if p.get("headline") and not merged["headline"]:
             merged["headline"] = p["headline"]
 
-        merged["provenance"] += [pr for pr in p.get("_provenance", []) if pr["field"] != "full_name"]
+        if p.get("location") and not merged["location"]:
+            merged["location"] = p["location"]
+            field_sources["location"].append(p["_source"])
+
+        if p.get("years_experience") and not merged["years_experience"]:
+            merged["years_experience"] = p["years_experience"]
+            field_sources["years_experience"].append(p["_source"])
+
+        merged["provenance"] += [pr for pr in p.get("_provenance", [])
+                                  if pr["field"] != "full_name"]
 
     merged["emails"] = list(dict.fromkeys(merged["emails"]))
     merged["phones"] = list(dict.fromkeys(merged["phones"]))
 
-    # --- per-field confidence, computed strictly from the design doc policy ---
     confidences = {field: field_confidence(srcs) for field, srcs in field_sources.items()}
     merged["field_confidence"] = confidences
     merged["overall_confidence"] = round(sum(confidences.values()) / len(confidences), 2)

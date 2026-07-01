@@ -1,7 +1,6 @@
 import csv
 
 def extract_csv(filepath):
-    """Reads the recruiter CSV and returns a list of raw candidate dicts."""
     records = []
     try:
         with open(filepath, newline='', encoding='utf-8') as f:
@@ -14,6 +13,8 @@ def extract_csv(filepath):
                     "company": row.get("current_company", "").strip() or None,
                     "title": row.get("title", "").strip() or None,
                     "github_username": row.get("github_username", "").strip() or None,
+                    "location": row.get("location", "").strip() or None,
+                    "years_experience": row.get("years_experience", "").strip() or None,
                     "_source": "csv"
                 })
     except FileNotFoundError:
