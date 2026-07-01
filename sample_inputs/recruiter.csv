@@ -1,5 +1,5 @@
-name,email,phone,current_company,title,github_username,location,years_experience
-Octo Cat,octocat@github.com,9876543210,GitHub Inc,Mascot Engineer,octocat,San Francisco US,5
-Linus B Valds,linus@example.com,+91-98765-43211,Linux Foundation,Kernel Maintainer,torvalds,Portland US,30
-Priya Singh,,9123456780,Infosys,Data Analyst,,Chennai IN,2
-Vikram Joshi,vikram.j@outlook.com,,TCS,,ghost-user-404,Mumbai IN,
+name,email,phone,current_company,title,start_date,end_date,summary,github_username,linkedin,headline,location,years_experience,skills,institution,degree,field_of_study,end_year
+Octo Cat,octocat@github.com,9876543210,GitHub Inc,Mascot Engineer,2018-06,,Official mascot and developer,octocat,https://linkedin.com/in/octocat,Open source enthusiast and GitHub mascot,San Francisco US,5,python;javascript,MIT,BS,Computer Science,2018
+Linus B Valds,linus@example.com,+91-98765-43211,Linux Foundation,Kernel Maintainer,1991-01,,Creator of Linux kernel,torvalds,,Creator of Linux and Git,Portland US,30,c;python,,,,
+Priya Singh,,9123456780,Infosys,Data Analyst,2022-03,,,,,Data analyst passionate about ML,Chennai IN,2,sql;python,,,,
+Vikram Joshi,vikram.j@outlook.com,,TCS,,,,, ghost-user-404,,,Mumbai IN,,java,,,,

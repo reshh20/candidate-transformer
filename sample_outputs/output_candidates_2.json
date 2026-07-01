@@ -1,172 +1,15 @@
 [
   {
-    "full_name": "The Octocat",
-    "emails": [
-      "octocat@github.com"
-    ],
-    "phones": [
-      "+919876543210"
-    ],
-    "location": {
-      "city": "San Francisco",
-      "region": null,
-      "country": "US"
-    },
-    "years_experience": 5.0,
-    "headline": "Open source enthusiast and GitHub mascot",
-    "skills": [
-      {
-        "name": "python",
-        "confidence": 0.6,
-        "sources": [
-          "csv"
-        ]
-      },
-      {
-        "name": "javascript",
-        "confidence": 0.6,
-        "sources": [
-          "csv"
-        ]
-      },
-      {
-        "name": "html",
-        "confidence": 0.3,
-        "sources": [
-          "github"
-        ]
-      },
-      {
-        "name": "css",
-        "confidence": 0.3,
-        "sources": [
-          "github"
-        ]
-      },
-      {
-        "name": "ruby",
-        "confidence": 0.3,
-        "sources": [
-          "github"
-        ]
-      }
-    ],
-    "experience": [
-      {
-        "company": "GitHub Inc",
-        "title": "Mascot Engineer",
-        "start": "2018-06",
-        "end": null,
-        "summary": "Official mascot and developer"
-      }
-    ],
-    "education": [
-      {
-        "institution": "MIT",
-        "degree": "BS",
-        "field": null,
-        "end_year": "2018"
-      }
-    ],
-    "links": {
-      "linkedin": "https://linkedin.com/in/octocat",
-      "github": "https://github.com/octocat",
-      "portfolio": null,
-      "other": []
-    },
-    "provenance": [
-      {
-        "field": "full_name",
-        "source": "github",
-        "method": "conflict_resolved",
-        "note": "CSV said 'Octo Cat', GitHub said 'The Octocat'. GitHub preferred (self-reported)."
-      },
-      {
-        "field": "emails",
-        "source": "csv",
-        "method": "direct"
-      },
-      {
-        "field": "phones",
-        "source": "csv",
-        "method": "normalize_phone"
-      },
-      {
-        "field": "location",
-        "source": "csv",
-        "method": "direct"
-      },
-      {
-        "field": "years_experience",
-        "source": "csv",
-        "method": "normalize_years_experience"
-      },
-      {
-        "field": "skills",
-        "source": "csv",
-        "method": "direct"
-      },
-      {
-        "field": "headline",
-        "source": "csv",
-        "method": "direct"
-      },
-      {
-        "field": "links.linkedin",
-        "source": "csv",
-        "method": "direct"
-      },
-      {
-        "field": "education",
-        "source": "csv",
-        "method": "direct"
-      },
-      {
-        "field": "skills",
-        "source": "github",
-        "method": "language_list"
-      },
-      {
-        "field": "links.github",
-        "source": "github",
-        "method": "direct"
-      },
-      {
-        "field": "headline",
-        "source": "github",
-        "method": "direct"
-      }
-    ],
-    "field_confidence": {
-      "full_name": 1.0,
-      "emails": 0.6,
-      "phones": 0.6,
-      "skills": 1.0,
-      "links.github": 0.3,
-      "links.linkedin": 0.6,
-      "location": 0.6,
-      "years_experience": 0.6,
-      "headline": 0.6,
-      "education": 0.6
-    },
-    "overall_confidence": 0.65,
-    "candidate_id": "cand_1"
-  },
-  {
     "full_name": "Linus Torvalds",
     "emails": [
       "linus@example.com"
     ],
     "phones": [
-      "+919876543211"
+      "+919876543210"
     ],
-    "location": {
-      "city": "Portland",
-      "region": null,
-      "country": "US"
-    },
-    "years_experience": 30.0,
-    "headline": "Creator of Linux and Git",
+    "location": null,
+    "years_experience": null,
+    "headline": null,
     "skills": [
       {
         "name": "c",
@@ -180,6 +23,13 @@
         "confidence": 0.6,
         "sources": [
           "csv"
+        ]
+      },
+      {
+        "name": "c++",
+        "confidence": 0.3,
+        "sources": [
+          "github"
         ]
       },
       {
@@ -195,22 +45,15 @@
         "sources": [
           "github"
         ]
-      },
-      {
-        "name": "c++",
-        "confidence": 0.3,
-        "sources": [
-          "github"
-        ]
       }
     ],
     "experience": [
       {
         "company": "Linux Foundation",
         "title": "Kernel Maintainer",
-        "start": "1991-01",
+        "start": null,
         "end": null,
-        "summary": "Creator of Linux kernel"
+        "summary": null
       }
     ],
     "education": [],
@@ -221,12 +64,6 @@
       "other": []
     },
     "provenance": [
-      {
-        "field": "full_name",
-        "source": "github",
-        "method": "conflict_resolved",
-        "note": "CSV said 'Linus B Valds', GitHub said 'Linus Torvalds'. GitHub preferred (self-reported)."
-      },
       {
         "field": "emails",
         "source": "csv",
@@ -290,30 +127,233 @@
       "skills": 1.0,
       "links.github": 0.3,
       "links.linkedin": 0.0,
-      "location": 0.6,
-      "years_experience": 0.6,
-      "headline": 0.6,
+      "location": 0.0,
+      "years_experience": 0.0,
+      "headline": 0.0,
       "education": 0.0
     },
-    "overall_confidence": 0.53,
+    "overall_confidence": 0.35,
+    "candidate_id": "cand_1"
+  },
+  {
+    "full_name": "Aditi Sharma",
+    "emails": [
+      "aditi.sharma@gmail.com"
+    ],
+    "phones": [
+      "+919845012345"
+    ],
+    "location": null,
+    "years_experience": null,
+    "headline": null,
+    "skills": [
+      {
+        "name": "python",
+        "confidence": 0.6,
+        "sources": [
+          "csv"
+        ]
+      },
+      {
+        "name": "sql",
+        "confidence": 0.6,
+        "sources": [
+          "csv"
+        ]
+      },
+      {
+        "name": "tensorflow",
+        "confidence": 0.6,
+        "sources": [
+          "csv"
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "company": "Infosys",
+        "title": "Data Scientist",
+        "start": null,
+        "end": null,
+        "summary": null
+      }
+    ],
+    "education": [],
+    "links": {
+      "linkedin": null,
+      "github": null,
+      "portfolio": null,
+      "other": []
+    },
+    "provenance": [
+      {
+        "field": "emails",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "phones",
+        "source": "csv",
+        "method": "normalize_phone"
+      },
+      {
+        "field": "location",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "years_experience",
+        "source": "csv",
+        "method": "normalize_years_experience"
+      },
+      {
+        "field": "skills",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "headline",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "links.linkedin",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "education",
+        "source": "csv",
+        "method": "direct"
+      }
+    ],
+    "field_confidence": {
+      "full_name": 0.6,
+      "emails": 0.6,
+      "phones": 0.6,
+      "skills": 0.6,
+      "links.github": 0.0,
+      "links.linkedin": 0.0,
+      "location": 0.0,
+      "years_experience": 0.0,
+      "headline": 0.0,
+      "education": 0.0
+    },
+    "overall_confidence": 0.24,
     "candidate_id": "cand_2"
   },
   {
-    "full_name": "Priya Singh",
-    "emails": [],
-    "phones": [
-      "+919123456780"
+    "full_name": "Jordan Blake",
+    "emails": [
+      "jordan.blake@outlook.com"
     ],
-    "location": {
-      "city": "Chennai",
-      "region": null,
-      "country": "IN"
-    },
-    "years_experience": 2.0,
-    "headline": "Data analyst passionate about ML",
+    "phones": [
+      "+919765432109"
+    ],
+    "location": null,
+    "years_experience": null,
+    "headline": null,
     "skills": [
       {
-        "name": "sql",
+        "name": "java",
+        "confidence": 0.6,
+        "sources": [
+          "csv"
+        ]
+      },
+      {
+        "name": "go",
+        "confidence": 0.6,
+        "sources": [
+          "csv"
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "company": "Netflix",
+        "title": "Senior Backend Engineer",
+        "start": null,
+        "end": null,
+        "summary": null
+      }
+    ],
+    "education": [],
+    "links": {
+      "linkedin": null,
+      "github": null,
+      "portfolio": null,
+      "other": []
+    },
+    "provenance": [
+      {
+        "field": "emails",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "phones",
+        "source": "csv",
+        "method": "normalize_phone"
+      },
+      {
+        "field": "location",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "years_experience",
+        "source": "csv",
+        "method": "normalize_years_experience"
+      },
+      {
+        "field": "skills",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "headline",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "links.linkedin",
+        "source": "csv",
+        "method": "direct"
+      },
+      {
+        "field": "education",
+        "source": "csv",
+        "method": "direct"
+      }
+    ],
+    "field_confidence": {
+      "full_name": 0.6,
+      "emails": 0.6,
+      "phones": 0.6,
+      "skills": 0.6,
+      "links.github": 0.0,
+      "links.linkedin": 0.0,
+      "location": 0.0,
+      "years_experience": 0.0,
+      "headline": 0.0,
+      "education": 0.0
+    },
+    "overall_confidence": 0.24,
+    "candidate_id": "cand_3"
+  },
+  {
+    "full_name": "Mei Chen",
+    "emails": [],
+    "phones": [
+      "+919654321098"
+    ],
+    "location": null,
+    "years_experience": null,
+    "headline": null,
+    "skills": [
+      {
+        "name": "aws",
         "confidence": 0.6,
         "sources": [
           "csv"
@@ -325,13 +365,20 @@
         "sources": [
           "csv"
         ]
+      },
+      {
+        "name": "docker",
+        "confidence": 0.6,
+        "sources": [
+          "csv"
+        ]
       }
     ],
     "experience": [
       {
-        "company": "Infosys",
-        "title": "Data Analyst",
-        "start": "2022-03",
+        "company": "Amazon",
+        "title": "Cloud Architect",
+        "start": null,
         "end": null,
         "summary": null
       }
@@ -392,30 +439,40 @@
       "skills": 0.6,
       "links.github": 0.0,
       "links.linkedin": 0.0,
-      "location": 0.6,
-      "years_experience": 0.6,
-      "headline": 0.6,
+      "location": 0.0,
+      "years_experience": 0.0,
+      "headline": 0.0,
       "education": 0.0
     },
-    "overall_confidence": 0.36,
-    "candidate_id": "cand_3"
+    "overall_confidence": 0.18,
+    "candidate_id": "cand_4"
   },
   {
-    "full_name": "Vikram Joshi",
+    "full_name": "Carlos Rivera",
     "emails": [
-      "vikram.j@outlook.com"
+      "carlos.rivera@yahoo.com"
     ],
     "phones": [],
-    "location": {
-      "city": "Mumbai",
-      "region": null,
-      "country": "IN"
-    },
+    "location": null,
     "years_experience": null,
     "headline": null,
     "skills": [
       {
-        "name": "java",
+        "name": "javascript",
+        "confidence": 0.6,
+        "sources": [
+          "csv"
+        ]
+      },
+      {
+        "name": "react",
+        "confidence": 0.6,
+        "sources": [
+          "csv"
+        ]
+      },
+      {
+        "name": "css",
         "confidence": 0.6,
         "sources": [
           "csv"
@@ -424,8 +481,8 @@
     ],
     "experience": [
       {
-        "company": "TCS",
-        "title": null,
+        "company": "Shopify",
+        "title": "Frontend Developer",
         "start": null,
         "end": null,
         "summary": null
@@ -487,12 +544,12 @@
       "skills": 0.6,
       "links.github": 0.0,
       "links.linkedin": 0.0,
-      "location": 0.6,
+      "location": 0.0,
       "years_experience": 0.0,
       "headline": 0.0,
       "education": 0.0
     },
-    "overall_confidence": 0.24,
-    "candidate_id": "cand_4"
+    "overall_confidence": 0.18,
+    "candidate_id": "cand_5"
   }
 ]

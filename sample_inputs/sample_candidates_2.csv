@@ -1,0 +1,6 @@
+name,email,phone,current_company,title,github_username,skills
+Linus Torvalds,linus@example.com,9876543210,Linux Foundation,Kernel Maintainer,torvalds,C;Python
+Aditi Sharma,aditi.sharma@gmail.com,9845012345,Infosys,Data Scientist,,Python;SQL;TensorFlow
+Jordan Blake,jordan.blake@outlook.com,9765432109,Netflix,Senior Backend Engineer,invalid-user-xyz,Java;Go
+Mei Chen,,9654321098,Amazon,Cloud Architect,,AWS;Python;Docker
+Carlos Rivera,carlos.rivera@yahoo.com,,Shopify,Frontend Developer,ghost-user-404,JavaScript;React;CSS

@@ -1,8 +1,15 @@
+import sys
 import json
 import tempfile
 import os
-import streamlit as st
 
+# Clear all cached src modules before importing
+# This ensures any code change in src/ reflects immediately in UI
+for mod_name in list(sys.modules.keys()):
+    if mod_name.startswith("src."):
+        del sys.modules[mod_name]
+
+import streamlit as st
 from src.pipeline import run_pipeline, run_pipeline_with_config
 
 st.set_page_config(page_title="Candidate Data Transformer", layout="wide")
@@ -29,12 +36,9 @@ run_button = st.sidebar.button("Run Pipeline")
 
 # --- Main logic ---
 if run_button:
-    # Decide which CSV path to actually use
     if use_sample:
         csv_path = "sample_inputs/recruiter.csv"
     elif uploaded_csv is not None:
-        # Save the uploaded file to a temporary path so our existing
-        # extract_csv() function (which expects a file path) can read it.
         tmp_dir = tempfile.mkdtemp()
         csv_path = os.path.join(tmp_dir, uploaded_csv.name)
         with open(csv_path, "wb") as f:
@@ -43,7 +47,6 @@ if run_button:
         st.warning("Please upload a CSV file or check 'Use bundled sample CSV'.")
         st.stop()
 
-    # Run the SAME pipeline functions used by the CLI — no duplicate logic.
     try:
         with st.spinner("Running pipeline..."):
             if config_choice == "Full output (no config)":
@@ -56,13 +59,11 @@ if run_button:
 
     st.success(f"Generated {len(result)} candidate profile(s).")
 
-    # Show each candidate as an expandable section
     for profile in result:
         name = profile.get("full_name") or profile.get("primary_email") or "Unknown candidate"
         with st.expander(f"{name}"):
             st.json(profile)
 
-    # Let the grader download the exact JSON your CLI would have produced
     st.download_button(
         label="Download output JSON",
         data=json.dumps(result, indent=2),
